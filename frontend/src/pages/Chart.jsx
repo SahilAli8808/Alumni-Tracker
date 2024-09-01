@@ -1,10 +1,6 @@
 import React from 'react'
 
 function Chart() {
-    const breadcrumbsItems = [
-        { text: 'Home', link: '/', icon: <RiHome2Line /> },
-        { text: 'Dashboard' },
-      ];
 
   return (
     <div>
