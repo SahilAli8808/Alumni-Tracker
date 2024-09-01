@@ -37,7 +37,7 @@ const EmploymentStatusChart = ({ selectedDate }) => {
 
   return (
     <div>
-      <h2 className='mb-2'>Employment Status for : <Badge color="green">{selectedDate}</Badge></h2>
+      <h2 className='mb-2'>Employment Status for : <Badge color="green">{format(selectedDate,'dd MMM yyyy')}</Badge></h2>
       {data.length > 0 ? (
         <>
           <ResponsiveContainer width="100%" height={250}>
