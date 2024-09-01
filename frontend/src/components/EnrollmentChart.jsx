@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BarChart, LineChart, Bar, Line, XAxis, YAxis, Tooltip, AreaChart, Area } from 'recharts';
+import { BarChart, LineChart, Bar, Line, XAxis, YAxis, Tooltip, AreaChart, Area, CartesianGrid } from 'recharts';
 import { format } from 'date-fns';
 import axios from 'axios';
 import toast from 'react-hot-toast';
@@ -42,6 +42,7 @@ const EnrollmentChart = ({ onDateClick }) => {
     if (chartType === 'Bar') {
       return (
         <BarChart width={500} height={250} data={data}>
+           <CartesianGrid strokeDasharray="1 1" />
           <XAxis dataKey="formattedDate" />
           <YAxis allowDecimals={false} domain={[0, 'auto']} />
           <Tooltip />
