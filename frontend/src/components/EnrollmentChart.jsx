@@ -6,7 +6,7 @@ import toast from 'react-hot-toast';
 
 const EnrollmentChart = ({ onDateClick }) => {
   const [data, setData] = useState([]);
-  const [chartType, setChartType] = useState('Area'); // Default to Bar chart
+  const [chartType, setChartType] = useState('Bar'); // Default to Bar chart
 
   useEffect(() => {
     axios.get('http://localhost:5000/api/alumni/enrollment-dates')
