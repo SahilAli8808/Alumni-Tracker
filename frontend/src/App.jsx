@@ -9,15 +9,13 @@ import { Outlet } from 'react-router-dom';
 
 
 function App() {
-  const [selectedDate, setSelectedDate] = useState(null);
 
-  const handleDateClick = (date) => {
-    setSelectedDate(date); // Update the selected date
-  };
+ 
 
   return (
     <div>
       <SliderBar  /> 
+      <Outlet/>
     
       {/* <h2>Bulk Import Alumni Data</h2>
       <BulkImport /> */}

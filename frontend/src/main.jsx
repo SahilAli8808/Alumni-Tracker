@@ -5,23 +5,23 @@ import App from './App.jsx'
 import './index.css'
 import { Theme } from '@radix-ui/themes';
 import {createBrowserRouter,  RouterProvider,} from "react-router-dom";
-import Layout from './Layout.jsx';
 import Dashboard from './pages/Dashboard.jsx';
+import Common from './pages/Common.jsx';
 
 
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Layout/>,
+    element: <App/>,
     children: [
       {
         path: "/",
-        element: <App/>,
+        element: <Dashboard/>,
       },
       {
-        path: "/",
-        element: <Dashboard/>,
+        path: "/test",
+        element: <Common/>,
       }
     ]
   },

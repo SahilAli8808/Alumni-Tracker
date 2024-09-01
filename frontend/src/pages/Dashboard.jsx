@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Breadcrumbs from '../components/Breadcrumb';
 import { RiAlarmWarningLine, RiHome2Line, RiHourglass2Fill, RiShoppingCart2Line, RiTruckLine } from 'react-icons/ri';
 import DashboardCard from '../components/DashboardCard';
 import { FiSettings } from 'react-icons/fi';
 import { FaUserAstronaut, FaUserCheck, FaUserDoctor, FaUserGraduate } from 'react-icons/fa6';
+import EnrollmentChart from '../components/EnrollmentChart';
+import EmploymentStatusChart from '../components/EmploymentStatusChart';
 
 function Dashboard() {
      
@@ -11,6 +13,11 @@ function Dashboard() {
         { text: 'Home', link: '/', icon: <RiHome2Line /> },
         { text: 'Dashboard' },
       ];
+
+      const [selectedDate, setSelectedDate] = useState(null);
+      const handleDateClick = (date) => {
+        setSelectedDate(date); // Update the selected date
+      };
 
       const dashData = {
         woTotal: 10,
@@ -28,15 +35,18 @@ function Dashboard() {
                 <AllCard/>
         </div> */}
         <div className="flex flex-wrap">
-          <DashboardCard loading={false} bgColor="#0073B7" icon={<FiSettings  />} value="Total Exercise" additionalField={dashData.woTotal} description="Last 30 Days"  />
-          <DashboardCard loading={false} bgColor="#00C0EF" icon={<FaUserAstronaut  />} value="Registered User" additionalField={dashData.woGenerated} description="Last 30 Days" />
+          {/* <DashboardCard loading={false} bgColor="#0073B7" icon={<FiSettings  />} value="Total Alumni" additionalField={dashData.woTotal} description="No. of Registered Alumni"  /> */}
+          {/* <DashboardCard loading={false} bgColor="#00C0EF" icon={<FaUserAstronaut  />} value="Registered " additionalField={dashData.woGenerated} description="Last 30 Days" />
           <DashboardCard loading={false} bgColor="#F39C12" icon={<FaUserGraduate  />} value="Top Users" additionalField={dashData.woInTransit} description="Last 30 Days"  />
-          <DashboardCard loading={false} bgColor="#00A65A" icon={<RiAlarmWarningLine  />} value="Total Etc." additionalField={dashData.woWaitingForApproval} description="Last 30 Days"  />
+          <DashboardCard loading={false} bgColor="#00A65A" icon={<RiAlarmWarningLine  />} value="Total Etc." additionalField={dashData.woWaitingForApproval} description="Last 30 Days"  /> */}
         </div>
   
        
-        
+        <div className='p-4'>
+        <EnrollmentChart onDateClick={handleDateClick} />
+        {selectedDate && <EmploymentStatusChart selectedDate={selectedDate} />}
 
+        </div>
 
       
       </div>

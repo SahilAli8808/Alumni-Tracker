@@ -79,7 +79,6 @@ const EnrollmentChart = ({ onDateClick }) => {
 
   return (
     <div>
-       <h1 className='text-3xl font-bold underline'>hello there</h1>
       <div style={{ marginBottom: '20px' }}>
         <label htmlFor="chartType">Select Chart Type: </label>
         <select id="chartType" value={chartType} onChange={handleChartTypeChange}>

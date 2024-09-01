@@ -17,7 +17,6 @@ const TopBar = ({open}) => {
     
 </div>
 
-
               <div className='fixed left-0 top-0 bg-white w-[10px] h-[50px] text-white'>.</div>
             </div>
             </div>          

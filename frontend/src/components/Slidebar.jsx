@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import { RxDashboard, RxCardStack, RxCardStackPlus, RxStack } from "react-icons/rx";
+import { LuTestTube } from "react-icons/lu";
+import { CiImport } from "react-icons/ci";
 import { FaStreetView } from "react-icons/fa";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { NavLink } from 'react-router-dom';
@@ -7,13 +9,12 @@ import TopBar from './Topbar';
 
 const Sidebar = () => {
   const [open,setOpen] = useState(true)
-  const isAuthorized = true
+  const isAuthorized = false
 
   const NavMenu = [
     { title:"Dashboard", path:'/', icon:<RxDashboard/>},
-    { title:"User Management", path:'/usermanagement',  icon:<RxCardStackPlus />},
-    { title:"Exercise Management", path:'/exercise-management',  icon:<RxStack  />},
-    { title:"Categories", path:'/workorderAllocation',  icon:<RxCardStack />},
+    { title:"Import Alumni", path:'/bulkimport',  icon:<CiImport />},
+    { title:"Test Component", path:'/test',  icon:<LuTestTube />},
   ]
   const MastersMenu = [
     { title:"General Settings", path:'/profile',  icon:<FaStreetView/>}
@@ -51,7 +52,7 @@ const Sidebar = () => {
     {/* <h1 className='text-3xl bg-foreground-blue font-bold underline'>test</h1> */}
     <div className={`bg-foreground-blue border h-screen pl-5 pt-20 ${open ? "w-56" : "w-[80px]"} duration-500 sticky top-0 float-left`}>
       <TopBar open={open}/>
-        <RxHamburgerMenu className={`hover:cursor-pointer w-7 h-6 rounded-full fixed  top-5  ${open?"left-[190px]":"left-[90px]"} duration-300`}
+        <RxHamburgerMenu className={`hover:cursor-pointer w-7 h-6 rounded-full fixed mb-2 top-5  ${open?"left-[190px]":"left-[90px]"} duration-300`}
           onClick={() => setOpen(prevOpen => !prevOpen)} />          
         <MenuList list={NavMenu} listTitle={'Navigation'} />
         {isAuthorized && <MenuList list={MastersMenu}  listTitle={'Masters'}/>}
