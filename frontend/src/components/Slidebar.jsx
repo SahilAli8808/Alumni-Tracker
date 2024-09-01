@@ -14,7 +14,7 @@ const Sidebar = () => {
   const NavMenu = [
     { title:"Dashboard", path:'/', icon:<RxDashboard/>},
     { title:"Import Alumni", path:'/bulkimport',  icon:<CiImport />},
-    { title:"Test Component", path:'/test',  icon:<LuTestTube />},
+    // { title:"Test Component", path:'/test',  icon:<LuTestTube />},
   ]
   const MastersMenu = [
     { title:"General Settings", path:'/profile',  icon:<FaStreetView/>}

@@ -15,8 +15,11 @@ function App() {
 
   return (
     <div>
+      <Theme>
       <SliderBar  /> 
       <Outlet/>
+        
+      </Theme>
     
       {/* <h2>Bulk Import Alumni Data</h2>
       <BulkImport /> */}

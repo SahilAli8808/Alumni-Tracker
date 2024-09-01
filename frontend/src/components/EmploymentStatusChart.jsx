@@ -16,11 +16,24 @@ const EmploymentStatusChart = ({ selectedDate }) => {
   return (
     <div>
       <h2>Employment Status for {selectedDate}</h2>
-      <PieChart width={600} height={400}>
-        <Pie data={data} dataKey="count" nameKey="industry" cx="50%" cy="50%" outerRadius={150} fill="#82ca9d" label />
-        <Tooltip />
-        <Legend />
-      </PieChart>
+      {data.length > 0 ? (
+        <PieChart width={500} height={250}>
+          <Pie
+            data={data}
+            dataKey="count"
+            nameKey="industry"
+            cx="50%"
+            cy="50%"
+            outerRadius={100}
+            fill="#82ca9d"
+            label
+          />
+          <Tooltip />
+          <Legend />
+        </PieChart>
+      ) : (
+        <p>No data available for the selected date.</p>
+      )}
     </div>
   );
 };

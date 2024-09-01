@@ -35,19 +35,26 @@ function Dashboard() {
                 <AllCard/>
         </div> */}
         <div className="flex flex-wrap">
-          {/* <DashboardCard loading={false} bgColor="#0073B7" icon={<FiSettings  />} value="Total Alumni" additionalField={dashData.woTotal} description="No. of Registered Alumni"  /> */}
-          {/* <DashboardCard loading={false} bgColor="#00C0EF" icon={<FaUserAstronaut  />} value="Registered " additionalField={dashData.woGenerated} description="Last 30 Days" />
+          <DashboardCard loading={false} bgColor="#0073B7" icon={<FiSettings  />} value="Total Alumni" additionalField={dashData.woTotal} description="No. of Registered Alumni"  />
+          <DashboardCard loading={false} bgColor="#00C0EF" icon={<FaUserAstronaut  />} value="Registered " additionalField={dashData.woGenerated} description="Last 30 Days" />
           <DashboardCard loading={false} bgColor="#F39C12" icon={<FaUserGraduate  />} value="Top Users" additionalField={dashData.woInTransit} description="Last 30 Days"  />
-          <DashboardCard loading={false} bgColor="#00A65A" icon={<RiAlarmWarningLine  />} value="Total Etc." additionalField={dashData.woWaitingForApproval} description="Last 30 Days"  /> */}
+          <DashboardCard loading={false} bgColor="#00A65A" icon={<RiAlarmWarningLine  />} value="Total Etc." additionalField={dashData.woWaitingForApproval} description="Last 30 Days"  />
         </div>
   
        
-        <div className='p-4'>
+        {/* <div className='p-4'>
         <EnrollmentChart onDateClick={handleDateClick} />
         {selectedDate && <EmploymentStatusChart selectedDate={selectedDate} />}
 
-        </div>
-
+        </div> */}
+<div className="flex flex-wrap min-h-screen">
+      <div className="w-full md:w-1/2 p-4">
+        <EnrollmentChart onDateClick={handleDateClick} />
+      </div>
+      <div className="w-full md:w-1/2 p-4">
+        <EmploymentStatusChart selectedDate={selectedDate} />
+      </div>
+    </div>
       
       </div>
     </>
