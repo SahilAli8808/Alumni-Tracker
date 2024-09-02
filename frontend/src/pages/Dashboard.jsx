@@ -68,9 +68,7 @@ setunemployedAlumni(unemployedAlumniCount);
        <>
       <div className='flex flex-col pt-16 p-4'>
         <Breadcrumbs items={breadcrumbsItems} />
-        {/* <div className="flex flex-wrap">
-                <AllCard/>
-        </div> */}
+  
         <div className="flex flex-wrap">
           <DashboardCard loading={false} bgColor="#0073B7" icon={<FiSettings  />} value="Total Alumni" additionalField={dashData.totalAlumnino} description="No. of Registered Alumni"  />
           <DashboardCard loading={false} bgColor="#00C0EF" icon={<FaUserAstronaut  />} value="Total Employed " additionalField={dashData.employedAlumni} description="No. of Employed Alumni" />
@@ -79,11 +77,6 @@ setunemployedAlumni(unemployedAlumniCount);
         </div>
   
        
-        {/* <div className='p-4'>
-        <EnrollmentChart onDateClick={handleDateClick} />
-        {selectedDate && <EmploymentStatusChart selectedDate={selectedDate} />}
-
-        </div> */}
 <div className="flex flex-wrap min-h-screen">
       <div className="w-full md:w-1/2 p-4">
         <EnrollmentChart onDateClick={handleDateClick} />
@@ -92,7 +85,7 @@ setunemployedAlumni(unemployedAlumniCount);
         <EmploymentStatusChart selectedDate={selectedDate} />
       </div>
     </div>
-      
+      {/* <h1>hello</h1> */}
       </div>
     </>
     </div>

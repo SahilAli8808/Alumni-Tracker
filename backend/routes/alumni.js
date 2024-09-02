@@ -19,8 +19,11 @@ router.get('/enrollment-dates', async (req, res) => {
 // Get employment status by date
 router.get('/employment-status/:date', async (req, res) => {
   const { date } = req.params;
+  console.log(`Requested date: ${date}`);
+
   try {
-    const employmentData = await Alumni.aggregate([
+    // Log the aggregation query
+    const aggregationQuery = [
       { $match: { enrollment_date: new Date(date) } },
       { 
         $group: { 
@@ -28,7 +31,10 @@ router.get('/employment-status/:date', async (req, res) => {
           count: { $sum: 1 } 
         } 
       }
-    ]);
+    ];
+    console.log('Aggregation query:', JSON.stringify(aggregationQuery, null, 2));
+
+    const employmentData = await Alumni.aggregate(aggregationQuery);
 
     const formattedData = employmentData.map(item => ({
       industry: item._id.industry,
@@ -42,6 +48,7 @@ router.get('/employment-status/:date', async (req, res) => {
     res.status(500).json({ error: 'Internal server error' });
   }
 });
+
 
 
 // POST new alumni data
